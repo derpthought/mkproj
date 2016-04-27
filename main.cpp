@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string>
+#include <iostream>
 
 // put template directory here
 #define TEMPLATE_DIR "/opt/templates/c++/"
@@ -7,7 +8,12 @@
 int main(int argc, char ** argv) {
     
     //verify proper number of arguments
-    if(argc < 2) return 0;
+    if(argc < 2) {
+       std::cout << "Please include a project name and try again.\n"
+                 << "e.g. mkproj YourProjNameHere\n";
+        
+       return 0; 
+    } 
     
     //arg 1 should be name of project
     auto proj_name = argv[1];
